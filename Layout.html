@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title th:text="${title} ?: 'PainPilot'">PainPilot</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand">MediCare AI</a>
+      <nav class="main-nav">
+        <a href="/landing">Home</a>
+        <a href="/pain-log">Log Pain</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/chat">AI Chat</a>
+        <a href="/therapy">Therapy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main-content">
+    <div th:insert="~{::content}"></div>
+  </main>
+
+  <footer class="footer container">
+    <small>© MediCare AI</small> |
+    <a href="/privacy">Privacy</a> |
+    <a href="/terms">Terms</a>
+  </footer>
+
+  <!-- bottom navigation -->
+  <nav class="bottom-nav" aria-label="Bottom Navigation">
+    <a href="/pain-log" class="bn-item">➕<span>Log</span></a>
+    <a href="/analytics" class="bn-item">📊<span>Analytics</span></a>
+    <a href="/chat" class="bn-item">💬<span>Chat</span></a>
+    <a href="/therapy" class="bn-item">💚<span>Therapy</span></a>
+    <a href="/landing" class="bn-item">🏠<span>Home</span></a>
+  </nav>
+
+  <script src="/js/chart-init.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+      </html>
